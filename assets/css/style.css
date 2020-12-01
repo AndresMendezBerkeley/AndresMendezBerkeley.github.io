@@ -1,0 +1,762 @@
+/* Format for font size */
+.section-title {
+    font-size: 72px;
+    font-family: 'Roboto', sans-serif;
+    color: #73C9E4;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+p {
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+    line-height: 1.5;
+}
+.nav h1 {
+    margin-left: 80vw;
+    font-family: 'Roboto', sans-serif;
+    color: #73C9E4;
+}
+.nav h1:hover {
+    cursor: pointer;
+    margin-left: 80vw;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+
+
+body {
+    min-width:850px;
+    margin: 0;
+    padding: 0;
+    
+    background-color: #121212;
+
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+ }
+ .hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ .hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../../assets/img/20200918_184435.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+ }
+ .hero-filter {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-color: rgba(38, 29, 135, .5);
+ }
+ .hero-content {
+    position: relative;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    text-align: center;
+    margin: 0.625rem;
+    z-index: 10;
+ }
+ .hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0;
+    display: inline-block;
+    width: 100vw;
+ }
+ .typed-cursor{
+    font-size: 4rem;
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+
+ .hero-arrow {
+     z-index: 10;
+     transform: translateX(-50%);
+     position: absolute;
+     left: 50%;
+     top: 90%;
+ }
+.fade-out {
+    opacity: 0;
+    transition: 1s;
+}
+.fade-half {
+    opacity: .5;
+    transition: 1s;
+}
+.fade-in {
+    opacity: 1;
+    transition: 1s;
+}
+
+ /* Project Menu Layout. */
+ .projects {
+    position: relative;
+    width: 100%;
+    height:80vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+.project1, .project2, .project3 {
+    width: 40vw;
+    height: 20vh;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .07);
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    transition-duration: .15s;
+
+    color: #ffffff;
+    font-size: 48px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.project_1-description, .project_2-description, .project_3-description{
+    width: 40vw;
+    height: 20vh;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, .07);
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button {
+    position: absolute;
+    background: rgba(187, 134, 252, 1);
+    box-shadow: 0 0 0 3pt #a25ef5;
+    width: 200px;
+    height: 50px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    transition-duration: .5s;
+    top: 75%;
+    opacity: 0;
+}
+.button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 2pt 3pt #ffffff;
+    transition-duration: .15s;
+}
+#button2:hover {
+    cursor: default;
+    box-shadow: 0 0 0 3pt #a25ef5;
+    transition-duration: .15s;
+}
+.visible {
+    opacity: 1;
+}
+
+.description-text {
+    margin-left: 20px;
+    margin-right: 20px;
+    line-height: 2;
+    z-index: -10;
+}
+
+
+.project1 {
+    position: absolute;
+    top: 0vh;
+    left: 1vw;
+    
+    background: linear-gradient( rgba(38, 29, 135, .5), rgba(38, 29, 135, .5) ), url(../../assets/img/20200918_184435.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 10;
+}
+
+.hover-border {
+    box-shadow: 0 0 3pt 2pt #ffffff;
+    transition-duration: .25s;
+}
+
+.project_1-description {
+    position: absolute;
+    top: 0vh;
+    left: 1vw;
+}
+
+.project2 {
+    position: absolute;
+    top: 27vh;
+    left: 1vw;
+    background: linear-gradient( rgba(98, 0, 238, 0.3), rgba(98, 0, 258, 0.3) ), url(../../assets/img/self-driving-car-lighter.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    z-index: 10;
+}
+.project_2-description {
+    position: absolute;
+    top: 27vh;
+    left: 1vw;
+}
+
+.project3 {
+    position: absolute;
+    top: 54vh;
+    left: 1vw;
+    background: linear-gradient( rgba(55, 0, 179, 0.5), rgba(55, 0, 179, 0.5) ), url(../../assets/img/leg_contracted.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+.project_3-description {
+    position: absolute;
+    top: 54vh;
+    left: 1vw;
+    z-index: -10;
+}
+
+
+.footer {
+    position: relative;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+}
+
+
+.animation {
+    position: absolute;
+    left:0;
+    margin-top: 100px;
+}
+.robot {
+    opacity: .5;
+}
+.robot img:first-child {
+    display: block;
+}
+.robot img {
+    display: none;
+}
+
+.computer {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: .5;
+}
+
+.light {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index:-1;
+    opacity: 0;
+}
+.lamp {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+}
+.desk {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    opacity: 1;
+}
+
+.my_information {
+    /* transform: translateX(-10%); */
+    margin-right: 50px;
+    padding-right: 0px;
+    padding-left: 25px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 50%;
+    background: rgba(255, 255, 255, .07);
+    width: 100%;
+}
+
+.text {
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+.turn-on {
+    opacity: 1;
+}
+
+.slideright {
+    font-size: 0px;
+    transform: translateX(45vw);
+    transition-duration: .25s;
+}
+.unslide {
+    font-size: 48px;
+    transform: translateX(0vw);
+    transition-duration: .15s;
+}
+
+.grow {
+    height: 42vh;
+    transition-duration: .25s;
+}
+.ungrow {
+    height: 20vh;
+    transition-duration: .15s;
+}
+
+.grow2 {
+    height: 42vh;
+    transform: translate(45vw, -22vh);
+    transition-duration: .25s;
+}
+.ungrow2 {
+    height: 20vh;
+    transform: translate(45vw, 0vh);
+    transition-duration: .15s;
+}
+
+/* Formatting divs/containers for quadruped html. */
+.pictures {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right:40px;
+    margin-left: 50px;
+    padding-bottom: 50px;
+    margin-right:50px;
+    border-radius:5px;
+    background: rgba(255, 255, 255, .07);
+    height: 875px;
+    margin-bottom: 100px;
+}
+.Design .pictures-text {
+    width: 50%;
+}
+.pictures-column1 {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-content: space-between;
+    width: 40%;
+    padding-right: 20px;
+    height: 100%;
+}
+.pictures-column2 {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    width: 20%;
+    height: 100%;
+}
+.pictures-row1 {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 20px;
+    height:55%;
+}
+.pictures-row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height:45%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .Design .pictures {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 1400px;
+    }
+    .Design .pictures-column1 {
+        display: flex;
+        flex-direction: column;
+        justify-items: flex-start;
+        align-items: space-between;
+        width: 90%;
+        padding-right: 20px;
+        height: 875px;
+    }
+    .Controller .pictures-text {
+        width: 90%;
+    }
+    
+    .Controller .pictures {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 1400px;
+    }
+    .Controller .pictures-column1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 90%;
+        padding-right: 20px;
+        height: 875px;
+    }
+    .Design .pictures-text {
+        width: 90%;
+        padding-top:40px;
+    }
+}
+
+#img_body {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    background: url(../../assets/img/body.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#img_leg_contracted {
+    width: 50%;
+    height: 100%;
+    border-radius: 11px;
+    margin-right: 10px;
+    background: url(../../assets/img/leg_contracted.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#img_wheel {
+    width: 50%;
+    height: 100%;
+    border-radius: 11px;
+    margin-left: 10px;
+    background: url(../../assets/img/autodesk_wheel.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+#img_leg_extended {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    background: url(../../assets/img/leg_extended.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.Assembly .pictures {
+    height: 1000px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 0px;
+}
+.Assembly .pictures-row1 {
+    height: 500px;
+}
+.Assembly .pictures-column1 {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-content: space-between;
+    width: 100%;
+    padding-right: 20px;
+    height: 100%;
+}
+.Assembly .pictures-column2 {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+#img_printed_parts {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    background: url(../../assets/img/printed_parts.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+}
+#img_assembled_robot {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    background: url(../../assets/img/assembled_robot.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+}
+
+.Simulation .pictures {
+    height: 1400px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.Simulation .pictures-column1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: space-between;
+    width: 100%;
+    padding-right: 20px;
+    height: 100%;
+}
+.Simulation .pictures-column2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+.Simulation .pictures-row1{
+    height: 40%;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.Simulation .pictures-row2 {
+    display: flex;
+    flex-direction: row;
+    height: 875px;
+}
+#img_one_note_base {
+    width: 33%;
+    margin-right: 20px;
+    border-radius: 11px;
+    background: url(../../assets/img/base_link.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+}
+#img_one_note_thigh {
+    width: 33%;
+    margin-right: 20px;
+    border-radius: 11px;
+    background: url(../../assets/img/thigh_shape.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+}
+#img_one_note_shin {
+    width: 33%;
+    border-radius: 11px;
+    background: url(../../assets/img/shin_shape.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+}
+#img_one_note {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    background: url(../../assets/img/one_note_.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+}
+#video_sim_robot {
+    width: 35vw;
+    border-radius: 11px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-bottom: 10px;
+}
+#another_sim_vid {
+    width: 35vw;
+    border-radius: 11px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: 10px;
+}
+
+/* .Controller .pictures{
+    background-color: #121212;
+    flex-direction: row;
+} */
+#phone {
+    position: relative;
+    width: 370px;
+    min-width: 370px;
+    height: 820px;
+    min-height: 820px;
+    /* height: 820px; */
+    border-radius: 26px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 0 3pt #BB86FC;
+    margin-left: 40px;
+    margin-right: 50px;
+    background-color: #121212;
+}
+#phone_screen {
+    position: absolute;
+    top: 22px;
+    left: 10px;
+    width: 350px;
+    /* height: 820px; */
+    border-radius: 11px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    /* outline: 5px solid #BB86FC; */
+    box-shadow: 0 0 3pt 2pt #BB86FC;
+}
+#vol_button1 {
+    position: absolute;
+    top:85px;
+    left:373px;
+    width:5px;
+    height: 45px;
+    background-color: #BB86FC;
+}
+#vol_button2 {
+    position: absolute;
+    top:135px;
+    left:373px;
+    width:5px;
+    height: 45px;
+    background-color: #BB86FC;
+}
+#power_button {
+    position: absolute;
+    top:230px;
+    left:373px;
+    width:5px;
+    height: 45px;
+    background-color: #BB86FC;
+}
+/* .Controller .pictures {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-top: 0px;
+    height: 1300px;
+}
+.Controller .pictures-text {
+    width: 75%;
+    min-width: 400px;
+    height: 60%;
+    padding-left: 40px;
+    padding-right: 40px;
+    background: rgba(255, 255, 255, .07);
+    border-radius: 11px;
+} */
+
+.FirstStep .pictures {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+    padding-top: 0px;
+    height: 1000px;
+}
+#first_step_vid {
+    margin-top: 40px;
+    width: 75vw; /*  Weird Video, constrained height, though trick to constrain to width. */
+    border-radius: 11px;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+    margin-bottom: 40px;
+}
+
+
+/**  Speech Bubble. */
+.box1 {
+    width: 500px;
+    height:200px;
+    margin: 50px auto;
+    border: 4px solid #BB86FC;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border-radius: 11px;
+}
+.right:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 20px solid #BB86FC;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #BB86FC;
+    border-bottom: 20px solid transparent;
+    right: -40px;
+    top: 20px;
+}
+
+.left:before {
+    content: "";
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid #BB86FC;
+    border-top: 20px solid #BB86FC;
+    border-bottom: 20px solid transparent;
+    left: -40px;
+    top: 20px;
+  }
