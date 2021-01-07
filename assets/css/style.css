@@ -1,3 +1,72 @@
+/* loader */
+.loader-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    background-color: #121212;
+}
+.loader.two {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	width: 110px;
+}
+
+.loader.two .dot {
+	height: 30px;
+	width: 30px;
+	background: #000;
+	border-radius: 15px;
+	background: #F76A4D;
+	/* TODO: PART 2 - Add wave animation */
+	animation: wave;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+}
+.loader.two .second.dot {
+	height: 30px;
+	width: 30px;
+	background: #000;
+	border-radius: 15px;
+	background: #4DB1F7;
+	/* TODO: PART 2 - Add wave animation */
+	animation: wave;
+	animation-duration: 2s;
+	animation-delay: .25s;
+	animation-iteration-count: infinite;
+}
+.loader.two .third.dot {
+	height: 30px;
+	width: 30px;
+	background: #000;
+	border-radius: 15px;
+	background: #7DE76A;
+	/* TODO: PART 2 - Add wave animation */
+	animation: wave;
+	animation-duration: 2s;
+	animation-delay: .5s;
+	animation-iteration-count: infinite;
+}
+@keyframes wave {
+	0% { transform: translateY(0); }
+	50% { transform: translateY(-50px);}
+	100% { transform: translateY(0); }
+}
+.loader-fade-out {
+    opacity: 0;
+    z-index: -100;
+    transition: opacity .5s, z-index 0s .5s;
+}
+
+
+
 /* Format for font size */
 .section-title {
     font-size: 72px;

@@ -389,7 +389,11 @@ new TypeIt(".hero-title", {
   loop: false
 }).go();
 
-onload = function startAnimation() { 
+onload = function startAnimation() {
+  // hide the loader.
+  //document.querySelector(".loader-container").classList.add("loader-fade-out");
+
+  // start playing other animations on the webpage
   var frames = document.querySelector(".robot").children;
   var frameCount = frames.length;
   var i = 0;
