@@ -23,11 +23,22 @@ p {
     font-family: 'Roboto', sans-serif;
     color: #ffffff;
 }
+a:active {
+    color: #73C9E4;
+    background-color: transparent;
+    text-decoration: underline;
+}
+a:visited {
+    color: #73C9E4;
+    background-color: transparent;
+    text-decoration: underline;
+}
 
 
 
 body {
-    min-width:850px;
+    position: relative;
+    min-width:1200px;
     margin: 0;
     padding: 0;
     
@@ -116,7 +127,7 @@ body {
  .projects {
     position: relative;
     width: 100%;
-    height:80vh;
+    height: 800px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -125,8 +136,8 @@ body {
 
 
 .project1, .project2, .project3 {
-    width: 40vw;
-    height: 20vh;
+    width: 40%;
+    height: 200px;
     border-radius: 5px;
     background: rgba(255, 255, 255, .07);
     margin-top: 100px;
@@ -136,7 +147,7 @@ body {
     transition-duration: .15s;
 
     color: #ffffff;
-    font-size: 48px;
+    font-size: 28px;
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
 
@@ -147,8 +158,8 @@ body {
 }
 
 .project_1-description, .project_2-description, .project_3-description{
-    width: 40vw;
-    height: 20vh;
+    width: 40%;
+    height: 200px;
     border-radius: 5px;
     background: rgba(255, 255, 255, .07);
     margin-top: 100px;
@@ -176,6 +187,7 @@ body {
     transition-duration: .5s;
     top: 75%;
     opacity: 0;
+    z-index: 0;
 }
 .button:hover {
     cursor: pointer;
@@ -189,6 +201,10 @@ body {
 }
 .visible {
     opacity: 1;
+}
+.hide_button {
+    position: absolute;
+    z-index: -10;
 }
 
 .description-text {
@@ -224,7 +240,7 @@ body {
 
 .project2 {
     position: absolute;
-    top: 27vh;
+    top: 300px;
     left: 1vw;
     background: linear-gradient( rgba(98, 0, 238, 0.3), rgba(98, 0, 258, 0.3) ), url(../../assets/img/self-driving-car-lighter.png);
     background-repeat: no-repeat;
@@ -234,13 +250,13 @@ body {
 }
 .project_2-description {
     position: absolute;
-    top: 27vh;
+    top: 300px;
     left: 1vw;
 }
 
 .project3 {
     position: absolute;
-    top: 54vh;
+    top: 600px;
     left: 1vw;
     background: linear-gradient( rgba(55, 0, 179, 0.5), rgba(55, 0, 179, 0.5) ), url(../../assets/img/leg_contracted.png);
     background-repeat: no-repeat;
@@ -249,13 +265,14 @@ body {
 }
 .project_3-description {
     position: absolute;
-    top: 54vh;
+    top: 600px;
     left: 1vw;
     z-index: -10;
 }
 
 
 .footer {
+    margin-top: 100px;
     position: relative;
     color: #ffffff;
     display: flex;
@@ -268,7 +285,6 @@ body {
 .animation {
     position: absolute;
     left:0;
-    margin-top: 100px;
 }
 .robot {
     opacity: .5;
@@ -334,21 +350,21 @@ body {
 
 .slideright {
     font-size: 0px;
-    transform: translateX(45vw);
+    transform: translateX(115%);
     transition-duration: .25s;
 }
 .unslide {
-    font-size: 48px;
+    font-size: 28px;
     transform: translateX(0vw);
     transition-duration: .15s;
 }
 
 .grow {
-    height: 42vh;
+    height: 500px;
     transition-duration: .25s;
 }
 .ungrow {
-    height: 20vh;
+    height: 200px;
     transition-duration: .15s;
 }
 
@@ -379,8 +395,11 @@ body {
     height: 875px;
     margin-bottom: 100px;
 }
+.Design .pictures {
+    height: auto;
+}
 .Design .pictures-text {
-    width: 50%;
+    width: 80%;
 }
 .pictures-column1 {
     display: flex;
@@ -401,7 +420,7 @@ body {
 .pictures-row1 {
     display: flex;
     flex-direction: row;
-    padding-bottom: 20px;
+    padding-bottom: 45px;
     height:55%;
 }
 .pictures-row2 {
@@ -409,35 +428,58 @@ body {
     flex-direction: row;
     justify-content: space-between;
     height:45%;
+    padding-bottom: 30px;
+}
+.picture-text-white{
+    font-size: 36px;
+    font-weight: 900;
+    color: #ffffff;
+    margin-left: 0px;
+    padding-right: 0px;
+    margin-top: 0px;
+    text-align: center;
+    width: 100%;
+}
+.picture-text{
+    font-size: 36px;
+    font-weight: 900;
+    color: #121212;
+    margin-left: 0px;
+    margin-top: 0px;
+    text-align: center;
+    width: 100%;
 }
 
-@media only screen and (max-width: 1200px) {
-    .Design .pictures {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 1400px;
-    }
-    .Design .pictures-column1 {
-        display: flex;
-        flex-direction: column;
-        justify-items: flex-start;
-        align-items: space-between;
-        width: 90%;
-        padding-right: 20px;
-        height: 875px;
-    }
-    .Controller .pictures-text {
-        width: 90%;
-    }
-    
+.Design .pictures {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+}
+.Design .pictures-column1 {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    align-items: space-between;
+    width: 60%;
+    padding-right: 20px;
+    height: auto;
+}
+.Design .pictures-row1 {
+    height: 700px;
+}
+.Design .pictures-row2 {
+    height: 400px;
+}
+
+@media only screen and (max-width: 1500px) {
     .Controller .pictures {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
         align-items: center;
-        height: 1400px;
+        height: auto;
     }
     .Controller .pictures-column1 {
         display: flex;
@@ -446,11 +488,7 @@ body {
         align-items: center;
         width: 90%;
         padding-right: 20px;
-        height: 875px;
-    }
-    .Design .pictures-text {
-        width: 90%;
-        padding-top:40px;
+        height: auto;
     }
 }
 
@@ -458,17 +496,40 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 11px;
-    background: url(../../assets/img/body.svg);
+    background: url(../../assets/img/body_more_canvas_colored.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
-#img_leg_contracted {
+#img_one_note_leg_representation {
     width: 50%;
     height: 100%;
     border-radius: 11px;
-    margin-right: 10px;
-    background: url(../../assets/img/leg_contracted.svg);
+    margin-right: 20px;
+    background: url(../../assets/img/one_note_leg_representation.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+}
+#img_spool {
+    width: 50%;
+    min-width: 330px;
+    height: 100%;
+    border-radius: 11px;
+    margin-left: 20px;
+    background: url(../../assets/img/one_note_spool_representation.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+}
+#img_shock_absorber {
+    width: 50%;
+    height: 100%;
+    border-radius: 11px;
+    margin-left: 10px;
+    background: url(../../assets/img/shock_absorber_and_ankle.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -494,14 +555,16 @@ body {
 }
 
 .Assembly .pictures {
-    height: 1000px;
+    height: auto;
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
     padding-bottom: 0px;
 }
 .Assembly .pictures-row1 {
     height: 500px;
+    width: 80%;
 }
 .Assembly .pictures-column1 {
     display: flex;
@@ -509,16 +572,19 @@ body {
     justify-items: flex-start;
     align-content: space-between;
     width: 100%;
-    padding-right: 20px;
+    padding-right: 40px;
     height: 100%;
 }
 .Assembly .pictures-column2 {
     display: flex;
     flex-direction: column;
-    justify-items: flex-start;
-    align-content: space-between;
+    justify-content: flex-start;
+    align-items: space-between;
     width: 100%;
     height: 100%;
+}
+.Assembly .pictures-text {
+    width: 80%;
 }
 #img_printed_parts {
     width: 100%;
@@ -540,19 +606,22 @@ body {
     background-position: center center;
     box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
 }
-
+.Simulation {
+    min-width: 1050px;
+}
 .Simulation .pictures {
-    height: 1400px;
+    height: auto;
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 }
 .Simulation .pictures-column1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: space-between;
-    width: 100%;
+    width: auto;
     padding-right: 20px;
     height: 100%;
 }
@@ -565,15 +634,24 @@ body {
     height: 100%;
 }
 .Simulation .pictures-row1{
-    height: 40%;
+    height: 100%;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 0px;
 }
 .Simulation .pictures-row2 {
     display: flex;
     flex-direction: row;
-    height: 875px;
+    justify-content: space-around;
+    height: 500px;
+    width: 80%;
+    margin-top: 45px;
 }
+.Simulation .pictures-text {
+    width: 80%;
+}
+
 #img_one_note_base {
     width: 33%;
     margin-right: 20px;
@@ -613,8 +691,30 @@ body {
     background-position: center center;
     box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
 }
+#img_one_note_circles_one {
+    width: 100%;
+    height: 100%;
+    border-radius: 11px;
+    background: url(../../assets/img/circles_one.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+    margin-left: 20px;
+}
+#img_one_note_circles_two {
+    width: 100%;
+    height:100%;
+    border-radius: 11px;
+    background: url(../../assets/img/circles_two.JPG);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
+    margin-right: 20px;
+}
 #video_sim_robot {
-    width: 35vw;
+    height: 350px;
     border-radius: 11px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -622,12 +722,11 @@ body {
     margin-bottom: 10px;
 }
 #another_sim_vid {
-    width: 35vw;
+    width: 80%;
     border-radius: 11px;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    margin-top: 10px;
 }
 
 /* .Controller .pictures{
@@ -687,23 +786,20 @@ body {
     height: 45px;
     background-color: #BB86FC;
 }
+.Controller .pictures {
+    height: auto;
+}
 /* .Controller .pictures {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
-    padding-top: 0px;
-    height: 1300px;
+    padding-top: 40px;
+    height: auto;
 }
 .Controller .pictures-text {
-    width: 75%;
-    min-width: 400px;
-    height: 60%;
-    padding-left: 40px;
-    padding-right: 40px;
-    background: rgba(255, 255, 255, .07);
-    border-radius: 11px;
+    width: 80%;
 } */
 
 .FirstStep .pictures {
@@ -713,11 +809,16 @@ body {
     align-items: center;
     margin-bottom: 50px;
     padding-top: 0px;
-    height: 1000px;
+    height: auto;
+}
+.FirstStep .pictures-text {
+    width: 80%;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 #first_step_vid {
     margin-top: 40px;
-    width: 75vw; /*  Weird Video, constrained height, though trick to constrain to width. */
+    width: 80%; /*  Weird Video, constrained height, though trick to constrain to width. */
     border-radius: 11px;
     box-shadow: 0 0 3pt 1pt rgba(255, 255, 255, .14);
     margin-bottom: 40px;
@@ -760,3 +861,31 @@ body {
     left: -40px;
     top: 20px;
   }
+
+/* Here is for the spool image page. */
+.PageImage .pictures-row2 {
+    height: 75%;
+}
+.PageImage .pictures-column1 {
+    width: 40%;
+    padding-right: 0px;
+}
+.PageImage #img_spool {
+    width: 100%;
+}
+.PageImage .pictures {
+    justify-content: center;
+}
+
+/* Simplified Robot Diagram. */
+#SimplifiedRobotDiagram #img_one_note_leg_representation {
+    width: 100%;
+}
+
+/* Highlighted Image Body*/
+#img_body_page .pictures-column1 {
+    width: 60%;
+}
+#img_body_page .pictures-row2 {
+    height: 60%;
+}

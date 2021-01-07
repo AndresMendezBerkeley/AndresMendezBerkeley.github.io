@@ -80,6 +80,7 @@ function grow(name) {
   if (name == '.project1') {
     document.querySelector(name).classList.add("grow");
     document.getElementById("button1").style.opacity = "1";
+    document.getElementById("button1").style.display = "inherit";
     flash_button1();
   } else if (name == '.project2') {
     document.querySelector(name).classList.add("grow");
@@ -92,7 +93,8 @@ function ungrow(name) {
   if (document.querySelector(name).classList.contains("grow")) {
     if (name == '.project1') {
       clearInterval(flash_anim_button1); // stop the flashing button animation.
-      document.getElementById("button1").style.opacity = "0"; // hide the button.
+      //document.getElementById("button1").style.opacity = "0"; // hide the button.
+      document.getElementById("button1").style.display = "none";
       document.querySelector(name).style.backgroundImage="linear-gradient( rgba("+ color1 +"), rgba(" + color1 + ") ), url(././assets/img/20200918_184435.jpg)";
       document.querySelector(name).classList.add("ungrow");
     }
@@ -140,7 +142,7 @@ var waypoint = new Waypoint({
   offset: '65%'
 });
 
-/*var mouseclick = "";
+var mouseclick = "";
 window.onclick=function(e) {
   mouseclick = e.target.className;
   console.log(mouseclick);
@@ -157,13 +159,20 @@ window.onclick=function(e) {
   if (mouseclick[7] == '3') {
     slide(".project3");
   }
-};*/
+};
 
 String.prototype.replaceAt = function(index, replacement) {
   return this.substr(0, index) + replacement + this.substr(index + replacement.length);
 }
 
-/*var mousehover = "";
+/**  BEGIN OF SECTION THAT HANDLES HOVER AND CLICK OF MOUSE:
+ *    This section uses two methods of to complete these two tasks. One method is having on event listeners for the mouse
+ *    on hover and on click. There are some edge cases that we must deal with, for these we use a MutationObserver to listen when
+ *    any objects classlist attributes change, then we check our specific items to see if we must update them.
+ */
+var mousehover = "";
+var which_project = "neither"; // this is default to neither, but this will update to either project, or neither depending on what we are hovering over.
+var show_outline = false;
 var clickable = false;
 window.onmouseover=function(e) {
   mousehover = e.target.className;
@@ -174,6 +183,7 @@ window.onmouseover=function(e) {
 
   if (mousehover == '1' || mousehover == '2') {
     if (mousehover == '1') {
+      which_project = ".project1";
       // changing the alpha layer to 0.X where X = 7
       // color1 = color1.replaceAt(14, '7');
       // update_image_shade('1', color1);
@@ -183,6 +193,7 @@ window.onmouseover=function(e) {
       }
     }
     if (mousehover == '2') {
+      which_project = ".project2";
       // changing the alpha layer to 0.X where X = 5
       // color2 = color2.replaceAt(14, '5');
       // update_image_shade('2', color2);
@@ -192,6 +203,7 @@ window.onmouseover=function(e) {
       }
     }
   } else {
+    which_project = ".neither";
     if (mousehover != '1') {
       // changing the alpha layer to 0.X where X = 8
       // color1 = color1.replaceAt(14, '5');
@@ -206,7 +218,61 @@ window.onmouseover=function(e) {
     }
     document.body.style.cursor = 'default';
   }
-};*/
+};
+
+
+// create a listener to update when a classlist is changed on an object.
+// Select the node that will be observed for mutations
+const targetNode = document.querySelector('.projects');
+
+// Options for the observer (which mutations to observe)
+const config = { attributes: true, childList: true, subtree: true };
+
+// Callback function to execute when mutations are observed
+const callback = function(mutationsList, observer) {
+    // Use traditional 'for loops' for IE 11
+    var proj1 = document.querySelector('.project1');
+    var proj2 = document.querySelector('.project2');
+    for(const mutation of mutationsList) {
+      // edge cases: where you move your mouse fast enough from one project to another. In between, the 'grow' tag
+      // may still be on project, so we need to double check it. To see for yourself, comment these if statements out
+      // and then: 1) click the second project, 2) as soon as you click, move the mouse as fast as you can to the first project,
+      // 3) you should see that there is not a hover animation. This is because, there is a slight delay timed delay elsewhere
+      // that removes all other classlist items once we are done with a certain animation.
+        if ((!proj1.classList.contains('grow') && which_project==".project1") && !proj1.classList.contains("hover-border")) {
+          document.body.style.cursor = 'pointer';
+          proj1.classList.add("hover-border");
+        }
+        if ((!proj2.classList.contains('grow') && which_project==".project2") && !proj2.classList.contains("hover-border")) {
+          document.body.style.cursor = 'pointer';
+          proj2.classList.add("hover-border");
+        }
+
+        // also edge case when we click and follow the project animation, we need to remove these hover effects also.
+        if ((proj1.classList.contains('grow') && which_project==".project1") && proj1.classList.contains("hover-border")) {
+          document.body.style.cursor = 'default';
+          proj1.classList.remove("hover-border");
+        }
+        if ((proj2.classList.contains('grow') && which_project==".project2") && proj2.classList.contains("hover-border")) {
+          document.body.style.cursor = 'default';
+          proj2.classList.remove("hover-border");
+        }
+    }
+    
+};
+// Create an observer instance linked to the callback function
+const observer = new MutationObserver(callback);
+// Start observing the target node for configured mutations
+observer.observe(targetNode, config);
+
+/**  END OF SECTION THAT HANDLES HOVER AND CLICK OF MOUSE:
+ *    This previous section used two methods of to complete these two tasks. One method is having on event listeners for the mouse
+ *    on hover and on click. There are some edge cases that we must deal with, for these we use a MutationObserver to listen when
+ *    any objects classlist attributes change, then we check our specific items to see if we must update them.
+ */
+
+
+
 
 function update_image_shade(which_one, color) {
   if (which_one == '1') {

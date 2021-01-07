@@ -19,12 +19,16 @@
                         <div id="img_body"></div>
                     </div>
                     <div class="pictures-row2">
-                        <div id="img_leg_contracted"></div>
-                        <div id="img_wheel"></div>
+                        <div id="img_one_note_leg_representation"><p class="picture-text-white"></p></div>
+                        <div id="img_spool"><p class="picture-text-white"></p></div>
                     </div>
                 </div>
                 <div class="pictures-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Pellentesque diam volutpat commodo sed. Faucibus vitae aliquet nec ullamcorper. In dictum non consectetur a. Mauris ultrices eros in cursus turpis massa tincidunt dui ut. Placerat orci nulla pellentesque dignissim. Malesuada proin libero nunc consequat interdum varius. Integer eget aliquet nibh praesent. Sit amet facilisis magna etiam tempor orci eu lobortis elementum. Adipiscing elit duis tristique sollicitudin nibh sit.</p>
+                    <p>The shape and mechanics of the robot were inspired by the <a href="https://www.epfl.ch/labs/biorob/misc/archive/cheetah-2/" target="_blank">cheetah cub</a> robot and other <a href="https://www.google.com/search?q=compliant+quadruped+robot&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiy6t7JrojuAhWQGTQIHZKNBrUQ_AUoAXoECAgQAw&biw=1689&bih=917" target="_blank">compliant quadruped</a> robot designs. Before going into the specifics of the design, let's get to know the different parts of the robot.</p>
+                	<p>In the <a href="body_highlighted_image.html" target="_blank">first diagram above</a>, I will refer to the green highlighted part as the spool because that is how we will control the string length which controls the knee joint. From the spool, the blue string (blue line) goes downwards and connects to the ankle, highlighted pink. Another important region is the orange region, this region is the shock absorber which connects from the thigh (purple region) to the ankle. The blue region at the bottom of the picture are the feet, which will rest on the ground when the robot is stationary.</p>
+	                <p>The basic idea of the robot can be represented in the <a href="simplified_robot_image.html" target="_blank">lower left diagram above</a>. There are two parallel lines which form a parallelogram. So when we move the ankle upwards, while keeping the thigh stationary, the parallelogram will become more ‘squished’ and the spring will compress. When the spring compresses, it will exert a force in the opposite direction of compression and try to push the ankle and foot back down.</p>
+	                <p>In the <a href="spool_string_image.html" target="_blank">last diagram above</a>, we will see how the spool will work to compress the spring and pull the foot closer to the body. The green dot represents where the string is attached to the spool. As we turn the spool, the string (pink dotted line) will ravel around and shorten the string, thus contracting the leg.</p>
+
                 </div>
             </div>
         </section>
@@ -41,7 +45,9 @@
                         </div>
                     </div>
                     <div class="pictures-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Pellentesque diam volutpat commodo sed. Faucibus vitae aliquet nec ullamcorper. In dictum non consectetur a. Mauris ultrices eros in cursus turpis massa tincidunt dui ut. Placerat orci nulla pellentesque dignissim. Malesuada proin libero nunc consequat interdum varius. Integer eget aliquet nibh praesent. Sit amet facilisis magna etiam tempor orci eu lobortis elementum. Adipiscing elit duis tristique sollicitudin nibh sit.</p>
+                        <p>For creating the 3D model of the robot, I used Autodesk Inventor to design each part. When designing on Autodesk,I’ve learned that it is really important to keep in mind that the parts modeled will eventually be 3D printed so don’t try to create anything too flimsy or complex.</p>
+                        <p>The first version of the robot looks drastically different from the final version because the first version was built too flimsy and was ultimately unstable. After each iteration of redesign, my robot’s leg became more and more sturdy!</p>
+                        <p>Some improvements that led to more strength and integrity of the 3D print was splicing some solid pieces into smaller parts and orienting them such that the load bearing of the robot prints adjacent to the grain of the print. What I mean by that is, if you print two identical rectangles in two different orientations, one rectangle may print stronger than the other. Another way to improve strength is to add duplicate reinforcement parts that stack on each other, which can be seen in the <a href="reinforcement_print.html" target="_blank">first picture above</a>.</p>
                     </div>
                 </div>
         </section>
@@ -49,29 +55,26 @@
         <section class="Simulation">
             <h1 class="section-title">The Simulation</h1>
                 <div class="pictures">
+                    <video autoplay muted loop id="another_sim_vid">
+                        <source src="assets/img/second_vid_thin.mp4" type="video/mp4">
+                        Your browser does not support HTML5 video.
+                    </video>
                     <div class="pictures-row2">
-                        <div class="pictures-column1">
-                            <div class="pictures-row1">
-                            <div id="img_one_note_base"></div>
-                            <div id="img_one_note_hip"></div>
-                            <div id="img_one_note_thigh"></div>
-                            <div id="img_one_note_shin"></div>
+                        <div class="pictures-row1">
+                            <div id="img_one_note_circles_two"></div>
                         </div>
-                        <div id="img_one_note"></div>
-                        </div>
-                        <div class="pictures-column2">
-                            <video autoplay muted loop id="video_sim_robot">
-                                <source src="assets/img/sim_walk_cropped.mp4" type="video/mp4">
-                                Your browser does not support HTML5 video.
-                            </video>
-                            <video autoplay muted loop id="another_sim_vid">
-                                <source src="assets/img/second_sim_cropped.mp4" type="video/mp4">
-                                Your browser does not support HTML5 video.
-                            </video>
+                        <div class="pictures-row1">
+                            <div id="img_one_note_circles_one"></div>
                         </div>
                     </div>
                     <div class="pictures-text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Pellentesque diam volutpat commodo sed. Faucibus vitae aliquet nec ullamcorper. In dictum non consectetur a. Mauris ultrices eros in cursus turpis massa tincidunt dui ut. Placerat orci nulla pellentesque dignissim. Malesuada proin libero nunc consequat interdum varius. Integer eget aliquet nibh praesent. Sit amet facilisis magna etiam tempor orci eu lobortis elementum. Adipiscing elit duis tristique sollicitudin nibh sit.</p>
+                        <p>This had to have been one of the most enjoyable parts of the project! This is where I recreated my robot in a simulation and had to problem solve some challenges that we take for granted in the physical world. For the heavy-lifting of the physics computations, I used <a href="https://pybullet.org/wordpress/" target="_blank">PyBullet</a>, an open source real-time physics simulator. After completing the simulation,  I trained the robot in the simulator how to walk using machine learning. I cannot take credit for the machine learning code, as I got it directly from a youtube channel <a href="https://www.youtube.com/channel/UC58v9cLitc8VaCjrcKyAbrw" target="_blank">Machine Learning with Phil</a> and I only made some changes to the code.</p>
+	                    <p>Creating the simulation took quite a bit of figuring out as well as understanding the URDF file which allows for PyBullet to import your 3D model from Autodesk Inventor. Once I figured out how to build my robot in the simulation the main challenge was figuring out how to implement the string and spool to control the position of the feet by bending the knees of the robot.</p>
+	                    <p>To solve the string and spool problem (<a href="spool_string_image.html" target="_blank">lower right diagram in a previous section</a>) may sound easy, but it was more difficult than it originally seemed. The reason why this task is difficult is because in the physical world, we can use the spool motor to control the angle of the knee. However, in the simulation, we must approximate the angle of the knee given the position of the thigh and the angle of the spool. So to understand the problem, look at the <a href="string_spool_solution_image.html" target="_blank">lower left diagram above</a>. See that we rotate the thigh of the robot clockwise by an arbitrary angle. Now we have two different circles, red and green. The intersection of these two circles tells us where we need to reposition the ankle of the robot so that it satisfies both the string constraint and the thigh position constraint. The <a href="string_spool_final_pos_image.html" target="_blank">lower diagram on the right</a> shows the final position of the robots leg to satisfy these constraints.</p>
+	                    <p>Once I ironed out the wrinkles of the simulation, to test the integrity of the simulation, I used code from Machine Learning with Phil to train the robot simulation how to walk using reinforcement learning. Reinforcement learning is essentially giving the robot positive rewards for good performance and negative rewards for bad behavior. Over time, the robot learns to perform the good actions over the bad actions. Given the reinforcement learning code from Machine Learning with Phil, I still had to come up with the reward policy.</p>
+	                    <p>If you want a robot to stand still, a good reward policy would be to sum up all movements in the motors and multiply that by a negative factor. Thus for the robot to gain a positive score, the robot would do best if it did not move its motors. Since the robot is repeatedly encouraged to stand still, it learns that the best way to increase its score is indeed to stand still.</p>
+                        <p>Now for my problem, how do we encourage the robot to walk forward? To solve this problem, we can mainly break walking down into two main components: not falling to the ground and moving in the forward direction. For encouraging the robot to not fall onto the ground, we can add a reward system that involves a negative reward for falling to the ground. As for moving in the forward direction, this involves the robot’s position and it’s velocity in the forward direction. We need to ensure that the robot walks forward and doesn’t eventually turn too much to one side or the other, so we need its position relative to the forward axis. Using the forward velocity, we can give a higher reward to a higher forward velocity in order to encourage it to walk in the forward direction.</p>
+                        <p>Once the rewards were in place, it took a lot of tuning. For example, if we give too high of a reward for the forward velocity, an easy cheat for the robot would be to fall forward and get the highest velocity it can before it hits the ground. On the other hand, giving too low of a reward for the forward velocity, the robot may just rock back and forth and not move anywhere.</p>
                     </div>
                 </div>
         </section>
@@ -91,7 +94,10 @@
                     </div>
                 </div>
                 <div class="pictures-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Pellentesque diam volutpat commodo sed. Faucibus vitae aliquet nec ullamcorper. In dictum non consectetur a. Mauris ultrices eros in cursus turpis massa tincidunt dui ut. Placerat orci nulla pellentesque dignissim. Malesuada proin libero nunc consequat interdum varius. Integer eget aliquet nibh praesent. Sit amet facilisis magna etiam tempor orci eu lobortis elementum. Adipiscing elit duis tristique sollicitudin nibh sit.</p>
+                    <p>For the controller, I used AndroidStudio and Java to design a 2D model of my robot so that the user when the user uses the controller, the action sent to the robot matches the animation on the phone. The controller uses bluetooth and sends the commands to the arduino which has a bluetooth adapter connected to the RX and TX pins. Designing the 2D representation was an enjoyable side project that did not take much time to implement and added much more character to the app rather than a giant empty space. So far the app just sends 3 basic commands to the arduino: walk forward, walk backwards, and stop. Each of the commands are sent depending on the position of the joystick. If the joystick is positioned left, it sends a walk forward command. If the joystick is positioned on the right, then a walk backwards command is sent. If the joystick is in the center position, then the stop command is sent. Creating the joystick was very straight forward using a polar coordinate system to limit how far the joystick could move by restricting the radius to a certain length.</p>
+                    <p>For the controller,  I used AndroidStudio and Java to design a 2D representation of my robot so that when the user uses the app, the action sent to the robot matches the animation on the phone screen. The app communicates with the arduino, located on the robot, through bluetooth. Using the RX and TX pins for bluetooth, means we can interpret the commands on the arduino and map it to certain commands. Designing the 2D representation was an enjoyable experience that did not take much time to implement and added much more character to the app rather than a giant blank space.</p>
+                    <p>So far the app just sends three basic commands to the arduino: walk forward, walk backwards, and idle. Each of these commands are sent depending on the position of the joystick. If the joystick is positioned to the left, the app sends a walk forward command. If the joystick on the right then a walk backwards command is sent.</p>
+                    <p>As for implementing the mechanics of the joystick itself, I used polar coordinates to limit how far the joystick could move inside the base pad. By restricting the radius of the joystick, we allow for ease of use by the user, while having a fun styled control layout.</p>
                 </div>
                 <!-- <div class="messages">
                     <div class="box1 right">
@@ -114,7 +120,8 @@
                 </video>
 
                 <div class="pictures-text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Bibendum ut tristique et egestas quis ipsum suspendisse ultrices. Pellentesque diam volutpat commodo sed. Faucibus vitae aliquet nec ullamcorper. In dictum non consectetur a. Mauris ultrices eros in cursus turpis massa tincidunt dui ut. Placerat orci nulla pellentesque dignissim. Malesuada proin libero nunc consequat interdum varius. Integer eget aliquet nibh praesent. Sit amet facilisis magna etiam tempor orci eu lobortis elementum. Adipiscing elit duis tristique sollicitudin nibh sit.</p>
+                    <p>As of now, I have a controller, a working 3D simulation, and a functioning 3D printed robot that can take a step. Since manually configuring the walking pattern for the robot is very time consuming and a lot of trial and error, I will be putting this project to the side and save it for when I have more time.</p>
+                    <p>Looking back at this project, I’ve certainly learned a lot! From 2D to 3D. From a simulation to the real world, a lot has been learned and a lot has been accomplished. Each step of this project has its own individual challenges, and each medium (AndroidStudio, Autodesk Inventor, Python/PyBullet) has their own too. To face each problem in this project has been a very rewarding journey and has taught me so much; to not give up so easily, and at times, learn to move on. Overall, I really enjoyed working on this project and look forward to working on other projects in the future, and eventually the time when I come back to this project.</p>
                 </div>
             </div>
         </section>
