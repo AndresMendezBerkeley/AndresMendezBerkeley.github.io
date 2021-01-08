@@ -383,12 +383,6 @@ var waypoint = new Waypoint({
   offset: '70%'
 });
 
-new TypeIt(".hero-title", {
-  strings: ["Hi, I’m Andres Mendez.", "", "Welcome to my project portfolio!"],
-  speed: 75,
-  loop: false
-}).go();
-
 onload = function startAnimation() {
   // hide the loader.
   //document.querySelector(".loader-container").classList.add("loader-fade-out");
