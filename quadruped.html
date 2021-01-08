@@ -98,7 +98,7 @@
                         <div id="vol_button2"></div>
                         <div id="power_button"></div>
                         <video autoplay muted loop id="phone_screen">
-                            <source src="assets/img/screen_recording.mp4" type="video/mp4">
+                            <source src="" type="video/mp4">
                             Your browser does not support HTML5 video.
                         </video>
                     </div>
@@ -108,16 +108,7 @@
                     <p>For the controller,  I used AndroidStudio and Java to design a 2D representation of my robot so that when the user uses the app, the action sent to the robot matches the animation on the phone screen. The app communicates with the arduino, located on the robot, through bluetooth. Using the RX and TX pins for bluetooth, means we can interpret the commands on the arduino and map it to certain commands. Designing the 2D representation was an enjoyable experience that did not take much time to implement and added much more character to the app rather than a giant blank space.</p>
                     <p>So far the app just sends three basic commands to the arduino: walk forward, walk backwards, and idle. Each of these commands are sent depending on the position of the joystick. If the joystick is positioned to the left, the app sends a walk forward command. If the joystick on the right then a walk backwards command is sent.</p>
                     <p>As for implementing the mechanics of the joystick itself, I used polar coordinates to limit how far the joystick could move inside the base pad. By restricting the radius of the joystick, we allow for ease of use by the user, while having a fun styled control layout.</p>
-                </div>
-                <!-- <div class="messages">
-                    <div class="box1 right">
-                        <p>I am a speech bubble.</p>
-                    </div>
-                    <div class="box1 left">
-                        <p>I am a speech bubble.</p>
-                    </div>
-                </div> -->
-                
+                </div>                
             </div>
         </section>
     

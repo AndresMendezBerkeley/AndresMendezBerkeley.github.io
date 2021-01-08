@@ -29,9 +29,10 @@ onload = function loaderAnim() {
         }, 100);
     }
 
-    // add the videos into their place.
+    // add the videos into their place in quadruped page.
     if (document.querySelector("#first_step_vid")) {
         document.querySelector("#first_step_vid").setAttribute('src', 'assets/img/first_step.mp4');
-        document.querySelector("#another_sim_vid").setAttribute('src', 'assets/img/second_vid_thin.mp4');   
+        document.querySelector("#another_sim_vid").setAttribute('src', 'assets/img/second_vid_thin.mp4');
+        document.querySelector("#phone_screen").setAttribute('src', 'assets/img/screen_recording.mp4');
     }
 }
